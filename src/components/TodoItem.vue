@@ -1,5 +1,26 @@
 <template>
-  <div></div>
+  <div>
+    <b-row class="mb-2">
+      <b-col cols="2">{{ todo.text }}</b-col>
+      <b-col cols="1">{{ todo.done }}</b-col>
+      <b-col>
+        <b-button
+          @click="gotoUpdate"
+          variant="primary"
+        >Editar</b-button>
+        <b-button
+          @click="updateTodoStatus"
+          class="ml-2"
+          variant="warning"
+        >Estado</b-button>
+        <b-button
+          @click="removeTodo"
+          class="ml-2"
+          variant="danger"
+        >Eliminar</b-button>
+      </b-col>
+    </b-row>
+  </div>
 </template>
 
 <script>
@@ -16,18 +37,18 @@ export default {
         _removeTodo: "todos/removeTodo"
       }),
       ...mapMutations("todos", ["setTodo"]),
-      getUpdateTodo(todo) {
-        this.setTodo(todo);
+      getUpdateTodo() {
+        this.setTodo(this.todo);
         this.$router.push({
           name: "todos-update",
-          params: { id: todo.id }
+          params: { id: this.todo.id }
         });
       },
-      updateTodoStatus(todo){
-          this._updateTodoStatus(todo)
+      updateTodoStatus() {
+        this._updateTodoStatus(this.todo);
       },
-      removeTodo(id){
-          this._removeTodo(todo)
+      removeTodo() {
+        this._removeTodo(this.todo.id);
       }
     }
   }

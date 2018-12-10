@@ -1,6 +1,5 @@
 import Vue from 'vue'
 
-
 export async function fetchTodos({commit}) {
     try {
         /*     const response = await Vue.axios({
@@ -18,7 +17,7 @@ export async function fetchTodos({commit}) {
         // commit('setTodos', data) esto es igual a lo de abajo
         commit('todos/setTodos', data, {root: true})
 
-    } catch (error) {
+    } catch (e) {
         commit('todos/todosError', e.message, {root: true})
     } finally{
         console.log ('Petición para obtener los todos finalizada')
@@ -39,7 +38,7 @@ export async function addTodo({commit,dispatch}, todo) {
         // commit('setTodos', data) esto es igual a lo de abajo
 
 
-    } catch (error) {
+    } catch (e) {
         commit('todos/todosError', e.message, {root: true})
     } finally{
         console.log ('Petición para crear un todo finalizada')
@@ -59,7 +58,7 @@ export async function updateTodo({commit}, todo) {
         })
 
 
-    } catch (error) {
+    } catch (e) {
         commit('todos/todosError', e.message, {root: true})
     } finally{
         console.log ('Petición para actualizar un todo finalizada')
@@ -80,7 +79,7 @@ export async function updateTodoStatus({commit}, todo) {
 
 
 
-    } catch (error) {
+    } catch (e) {
         commit('todos/todosError', e.message, {root: true})
     } finally{
         console.log ('Petición para actualizar el estado de  un todo finalizada')
@@ -98,7 +97,7 @@ export async function removeTodo({commit,dispatch}, todo) {
 
         dispatch('fetchTodos')
 
-    } catch (error) {
+    } catch (e) {
         commit('todos/todosError', e.message, {root: true})
     } finally{
         console.log ('Petición para actualizar el estado de  un todo finalizada')
