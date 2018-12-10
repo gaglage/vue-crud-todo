@@ -8,7 +8,7 @@
         >Listado de todos</b-nav-item>
         <b-nav-item
           exact
-          to="/todos-create"
+          to="/todos/create"
         >formulario de alta de todos</b-nav-item>
       </b-nav>
       <router-view/>

@@ -20,7 +20,6 @@ export default new Router({
     {
       path: '/todos/create',
       name: 'todos-create',
-
       component: () => import( /* webpackChunkName: "todos-create" */ './views/TodoCreate.vue')
     },
     {
