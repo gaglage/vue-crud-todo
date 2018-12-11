@@ -3,6 +3,7 @@
     <todo-form
       :todo="selectedTodo"
       @processTodo="updateTodo"
+      todoSubmit="Actualizar todo"
     ></todo-form>
   </div>
 </template>
@@ -19,7 +20,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      _updateTodo: "todos/addTodo"
+      _updateTodo: "todos/updateTodo"
     }),
     updateTodo(todo) {
       this._updateTodo(todo).then(() => {

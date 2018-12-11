@@ -46,11 +46,10 @@ export async function addTodo({commit,dispatch}, todo) {
 }
 
 export async function updateTodo({commit}, todo) {
-    console.log('updateTodo---')
     try {
         await Vue.axios({
             method: 'PUT',
-            url: `/todos/{$todo.id}`,
+            url: `/todos/${todo.id}`,
             data: {
                 id: todo.id,
                 text: todo.text,
@@ -92,7 +91,7 @@ export async function removeTodo({commit,dispatch}, todo) {
     try {
         await Vue.axios({
             method: 'DELETE',
-            url: `/todos/{$todo.id}`,
+            url: `/todos/${todo.id}`,
 
         })
 

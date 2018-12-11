@@ -47,7 +47,8 @@ export default {
       this._updateTodoStatus(this.todo);
     },
     removeTodo() {
-      this._removeTodo(this.todo.id);
+      console.log(this.todo);
+      this._removeTodo(this.todo);
     }
   }
 };
