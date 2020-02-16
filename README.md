@@ -8,6 +8,8 @@ yarn install
 ### Compiles and hot-reloads for development
 ```
 yarn run serve
+
+json-server json-server\db.json para levantar el server de json (db)
 ```
 
 ### Compiles and minifies for production
